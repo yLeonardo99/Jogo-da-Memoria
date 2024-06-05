@@ -8,5 +8,5 @@ Siga-me!
 
 Link para Jogar
 
-<a href="[(https://yleonardo99.github.io/Jogo-da-Memoria/)](https://yleonardo99.github.io/Jogo-da-Memoria/)"> Jogo Da Memória
+<a href="https://yleonardo99.github.io/Jogo-da-Memoria/"> Jogo Da Memória
 
