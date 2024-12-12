@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 svg {
@@ -11,42 +12,50 @@ svg {
 }
 
 .game {
-  min-width: 575px;
+  min-width: 100%;
   height: 100vh;
   background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
+
 .game__cards {
-  width: 720px;
-  margin: auto;
+  width: 100%;
+  max-width: 720px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* Padrão: 5 colunas */
   grid-auto-rows: 100px;
   grid-gap: 20px;
   padding: 0 20px;
 }
+
 .game__cards.no-event {
   pointer-events: none;
 }
+
 .game__card {
   position: relative;
   cursor: pointer;
   perspective: 700px;
 }
+
 .game__card.flipped,
 .game__card.has-match {
   pointer-events: none;
 }
+
 .game__card.flipped .game__back-card,
 .game__card.has-match .game__back-card {
   transform: rotateY(180deg);
 }
+
 .game__card.flipped .game__front-card,
 .game__card.has-match .game__front-card {
   transform: rotateY(360deg);
 }
+
 .game__back-card,
 .game__front-card {
   position: absolute;
@@ -63,9 +72,11 @@ svg {
   backface-visibility: hidden;
   transition: transform 400ms;
 }
+
 .game__back-card {
   z-index: 1;
 }
+
 .game__front-card {
   transform: rotateY(180deg);
 }
@@ -76,7 +87,15 @@ svg {
   color: #ccc;
   background: #333;
 }
+
 .footer a {
   color: #21a1e1;
   text-decoration: none;
+}
+
+/* Media Queries para telas maiores (PC) */
+@media (min-width: 1024px) {
+  .game__cards {
+    grid-template-columns: repeat(4, 1fr); 
+  }
 }
